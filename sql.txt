@@ -1,0 +1,69 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 09, 2022 at 03:16 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `hospital`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `report`
+--
+
+CREATE TABLE `report` (
+  `username` varchar(50) DEFAULT NULL,
+  `message` varchar(100) DEFAULT NULL,
+  `report_date` date DEFAULT curdate()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `report`
+--
+
+INSERT INTO `report` (`username`, `message`, `report_date`) VALUES
+('anil', 'i have head ache', '2022-08-23'),
+('elfino', 'hello friends nen oka ammai kosam koskuntunna ', '2022-08-25'),
+('Arkp@1289', 'I HAVE SOME ISSUE PLEASE RESPOND TO ME QUICKLY', '2022-08-26'),
+('shabi', ' i have stomach pain from few days ....please help me as soon as possible ', '2022-09-05');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `mobile` varchar(12) DEFAULT NULL,
+  `username` varchar(30) DEFAULT NULL,
+  `password` varchar(20) DEFAULT NULL,
+  `message` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD UNIQUE KEY `email` (`email`);
+COMMIT;
